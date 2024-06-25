@@ -31,7 +31,7 @@ public class App {
     	mp.put("developer", "http://dbpedia.org/ontology/developer"); //
     	mp.put("India", "http://dbpedia.org/resource/India"); //
     	mp.put("starring", "http://dbpedia.org/ontology/starring"); //
-    	mp.put("artist", "http://dbpedia.org/ontology/artist");
+    	mp.put("artist", "http://dbpedia.org/ontology/artist"); //
     	mp.put("Leonardo_DiCaprio", "http://dbpedia.org/resource/Leonardo_DiCaprio"); //
     	mp.put("Film", "http://dbpedia.org/ontology/Film"); //
     	mp.put("Album", "http://dbpedia.org/ontology/Album"); //
@@ -41,12 +41,17 @@ public class App {
         mp.put("VideoGame", "http://dbpedia.org/ontology/VideoGame"); //
         mp.put("Book", "http://dbpedia.org/ontology/Book"); //
         mp.put("author", "http://dbpedia.org/ontology/author"); //
-        mp.put("country", "http://dbpedia.org/ontology/country"); //
+        mp.put("Country", "http://dbpedia.org/ontology/Country"); //
         mp.put("River", "http://dbpedia.org/ontology/River"); //
         mp.put("nationality", "http://dbpedia.org/ontology/nationality"); //
-        mp.put("currency", "http://dbpedia.org/ontology/currency");
+        mp.put("currency", "http://dbpedia.org/ontology/currency"); //
+        mp.put("capital", "http://dbpedia.org/ontology/capital"); //
+        mp.put("populationTotal", "http://dbpedia.org/ontology/populationTotal"); //
+        mp.put("abstract", "http://dbpedia.org/ontology/abstract"); //
+        mp.put("officialLanguage", "http://dbpedia.org/ontology/officialLanguage"); //
         mp.put("Nintendo", "http://dbpedia.org/resource/Nintendo"); //
-        mp.put("Japan", "http://dbpedia.org/resource/Japan"); 
+        mp.put("Japan", "http://dbpedia.org/resource/Japan"); // 
+        mp.put("runtime", "http://dbpedia.org/property/runtime"); //
     	
 
         // Convert the KQL string into the SPARQL compatible string
@@ -104,13 +109,18 @@ public class App {
         kqlQuery = kqlQuery.replace(" VideoGame ", " kql:VideoGame "); //
         kqlQuery = kqlQuery.replace(" Nintendo ", " kql:Nintendo "); //
         kqlQuery = kqlQuery.replace(" River ", " kql:River "); //
-        kqlQuery = kqlQuery.replace(" country ", " kql:country "); //
+        kqlQuery = kqlQuery.replace(" Country ", " kql:Country "); //
         kqlQuery = kqlQuery.replace(" Charles_Dickens ", " kql:Charles_Dickens "); //
         kqlQuery = kqlQuery.replace(" Book ", " kql:Book "); //
         kqlQuery = kqlQuery.replace(" author ", " kql:author "); //
-        kqlQuery = kqlQuery.replace(" nationality ", " kql:nationality ");
-        kqlQuery = kqlQuery.replace(" Japan ", " kql:Japan ");
-        kqlQuery = kqlQuery.replace(" currency ", " kql:currency ");
+        kqlQuery = kqlQuery.replace(" nationality ", " kql:nationality "); //
+        kqlQuery = kqlQuery.replace(" Japan ", " kql:Japan "); //
+        kqlQuery = kqlQuery.replace(" currency ", " kql:currency "); //
+        kqlQuery = kqlQuery.replace(" capital ", " kql:capital "); //
+        kqlQuery = kqlQuery.replace(" populationTotal ", " kql:populationTotal "); //
+        kqlQuery = kqlQuery.replace(" abstract ", " kql:abstract "); //
+        kqlQuery = kqlQuery.replace(" runtime ", " kql:runtime "); //
+        kqlQuery = kqlQuery.replace(" officialLanguage ", " kql:officialLanguage "); //
 
         return kqlQuery;
     }
