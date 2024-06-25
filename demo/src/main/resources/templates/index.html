@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SPARQL Manipulation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SPARQL String Manipulation</h1>
+        <form th:action="@{/manipulate}" method="post" class="form">
+            <div class="form-group">
+                <label for="sparqlInput">Enter SPARQL String:</label>
+                <textarea id="sparqlInput" name="SparqlString" rows="10" cols="50" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div th:if="${sparqlString}">
+            <h2>Submitted SPARQL String:</h2>
+            <pre th:text="${sparqlString}"></pre>
+        </div>
+
+        <div th:if="${manipulatedString}">
+            <h2>Manipulated SPARQL String:</h2>
+            <pre th:text="${manipulatedString}"></pre>
+        </div>
+
+        <div th:if="${queryResult}">
+            <h2>Query Execution Result:</h2>
+            <pre th:text="${queryResult}"></pre>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
