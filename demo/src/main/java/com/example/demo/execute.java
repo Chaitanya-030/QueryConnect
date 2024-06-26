@@ -10,7 +10,7 @@ import org.apache.jena.sparql.engine.http.QueryExceptionHTTP;
 
 public class execute {
     public static String executedbpedia(String sparqlString) {
-        StringBuilder result=new StringBuilder();
+        StringBuilder result = new StringBuilder();
         String queryString =
                 "SELECT * WHERE { " +
                         "    SERVICE <http://dbpedia.org/sparql?timeout=10> { " +
@@ -26,7 +26,7 @@ public class execute {
         } catch (QueryExceptionHTTP e) {
             System.err.println("QueryExceptionHTTP: " + e.getMessage());
         }
-        String ret=result.toString();
+        String ret = result.toString();
         System.out.println(ret);
         return ret;
     }

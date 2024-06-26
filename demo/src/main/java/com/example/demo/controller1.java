@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class controller1 {
     @GetMapping("/")
-    String f1() {
+    public String f1(Model model) {
         return "index";
     }
     @PostMapping("/manipulate")
-    public String f2(@RequestParam("SparqlString") String SparqlString,Model model)
+    public String f2(@RequestParam("kqlString") String kqlString, Model model)
     {
-        String manipulatedString1=App.manipulate(SparqlString);
-        model.addAttribute("manipulatedString", manipulatedString1);
-        String queryResult = execute.executedbpedia(manipulatedString1);
+        model.addAttribute("kqlString", kqlString);
+        String sparqlString = App.manipulate(kqlString);
+        model.addAttribute("sparqlString", sparqlString);
+        String queryResult = execute.executedbpedia(sparqlString);
         model.addAttribute("queryResult", queryResult);
         return "index";
     }
